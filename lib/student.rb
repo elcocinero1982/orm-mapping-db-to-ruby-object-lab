@@ -28,7 +28,16 @@ def self.all
       self.new_from_db(row)
     end.first
   end	  
-  
+  def self.count_all_students_in_grade_9
+    sql = <<-SQL
+    SELECT COUNT(grade)
+    FROM students
+    WHERE grade = 9
+    SQL
+    DB[:conn].execute(sql).map do |row|
+      self.new_from_db(row)
+    end
+  end
   
 
  
