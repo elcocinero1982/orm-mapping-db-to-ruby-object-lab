@@ -9,6 +9,8 @@ class Student
     student
   end
 def self.all
+  sql=<<-SQL
+  
     FROM students
     SQL
     DB[:conn].execute(sql).map do |row|
