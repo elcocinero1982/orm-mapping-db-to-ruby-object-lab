@@ -28,7 +28,7 @@ def self.all
       self.new_from_db(row)
     end.first
   end	  
-  def self.count_all_students_in_grade_9
+  def self.
     sql = <<-SQL
     SELECT COUNT(grade)
     FROM students
